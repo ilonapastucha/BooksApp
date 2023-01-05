@@ -4,14 +4,14 @@ import "./BookItem.css";
 
 interface Props {
   book: Book;
-  removeBook: (book: Book) => void;
+  removeBook: (id: string) => void;
 }
 
 const BookItem: FC<Props> = ({ book, removeBook }) => {
   return (
     <li className="book-item">
-      {`${book.title} by ${book.author}, ${book.price}$`}{" "}
-      <button type="button" onClick={() => removeBook(book)}>
+      {book.title} by {book.author}, ${book.price}
+      <button type="button" onClick={() => removeBook(book.id)}>
         X
       </button>
     </li>
